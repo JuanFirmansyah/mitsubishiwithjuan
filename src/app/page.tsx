@@ -283,92 +283,180 @@ export default function Home() {
         <section id="testimonials" className="py-16 bg-primary-500 text-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Client <span className="text-white">Testimonials</span></h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Testimoni <span className="text-white">Klien Kami</span></h2>
               <p className="text-lg max-w-2xl mx-auto">
-                Hear what our valued customers say about their Bosowa experience
+                Dengarkan apa kata pelanggan tentang pengalaman mereka bersama Bosowa
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white text-gray-900 p-8 rounded-xl shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
+
+            {/* Scroll container dengan scroll snap */}
+            <div
+              className="flex overflow-x-auto space-x-6 px-2 pb-6 scrollbar-thin scrollbar-thumb-primary-300 scrollbar-track-primary-700"
+              style={{ scrollSnapType: 'x mandatory' }}
+            >
+              {[ // Data testimonial
+                {
+                  quote:
+                    "Tim Bosowa sangat profesional dan ramah. Pengalaman beli mobil saya benar-benar luar biasa!",
+                  name: "Michael Johnson",
+                  title: "CEO, Tech Innovations",
+                  image: "/client1.jpg",
+                },
+                {
+                  quote:
+                    "Dari proses kredit hingga pengiriman mobil, semua ditangani cepat dan transparan. Highly recommended!",
+                  name: "Sarah Williams",
+                  title: "Director, Global Finance",
+                  image: "/client2.jpg",
+                },
+                {
+                  quote:
+                    "Bosowa punya pilihan mobil lengkap, dan pelayanannya bintang lima. Saya pasti kembali lagi.",
+                  name: "John Doe",
+                  title: "Entrepreneur",
+                  image: "/client3.jpg",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 w-80 bg-white text-gray-900 p-8 rounded-xl shadow-lg scroll-snap-align-start"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="flex text-yellow-400 space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <FaStar key={i} />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="italic mb-6">&quot;{item.quote}&quot;</p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <Image src={item.image} alt={item.name} width={48} height={48} />
+                    </div>
+                    <div>
+                      <p className="font-bold">{item.name}</p>
+                      <p className="text-sm text-gray-600">{item.title}</p>
+                    </div>
                   </div>
                 </div>
-                <p className="italic mb-6">
-                  &quot;The team at Bosowa made my car buying experience exceptional. Their attention to detail and customer service is unmatched in the industry.&quot;
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image src="/client1.jpg" alt="Client" width={48} height={48} />
-                  </div>
-                  <div>
-                    <p className="font-bold">Michael Johnson</p>
-                    <p className="text-sm text-gray-600">CEO, Tech Innovations</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white text-gray-900 p-8 rounded-xl shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                  </div>
-                </div>
-                <p className="italic mb-6">
-                  &quot;From financing to delivery, everything was handled professionally. I&apos;ve recommended Bosowa to all my colleagues looking for premium vehicles.&quot;
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image src="/client2.jpg" alt="Client" width={48} height={48} />
-                  </div>
-                  <div>
-                    <p className="font-bold">Sarah Williams</p>
-                    <p className="text-sm text-gray-600">Director, Global Finance</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Proses Pembelian Section */}
-        <section className="py-16 bg-white dark:bg-gray-800">
+
+        {/* Proses Pembelian Section - Modern Design */}
+        <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Proses Pembelian <span className="text-primary-500">Mudah</span></h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Hanya 4 langkah sederhana untuk memiliki mobil impian Anda
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black dark:text-white">
+                Proses Pembelian <span className="text-primary-500">Super Mudah</span>
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Hanya 4 langkah sederhana untuk memiliki mobil impian Anda dengan pengalaman eksklusif
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="bg-primary-100 dark:bg-primary-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto text-primary-500 text-xl font-bold">1</div>
-                <h3 className="font-bold mb-2">Konsultasi</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Diskusikan kebutuhan mobil Anda dengan sales kami</p>
+
+            <div className="relative">
+              {/* Timeline Connector */}
+              <div className="hidden md:block absolute top-16 left-1/2 h-1 w-3/4 bg-primary-500 bg-opacity-20 transform -translate-x-1/2"></div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 lg:gap-8">
+                {/* Step 1 */}
+                <div className="group relative z-10">
+                  <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+                    <div className="relative mb-6">
+                      <div className="absolute inset-0 bg-primary-500 rounded-full opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300"></div>
+                      <div className="relative w-20 h-20 bg-primary-500 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                        1
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-black dark:text-white">Konsultasi Eksklusif</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Diskusikan kebutuhan mobil Anda dengan konsultan profesional kami via WhatsApp, telepon, atau langsung di showroom
+                    </p>
+                    <div className="mt-4">
+                      <a 
+                        href="https://wa.me/6282343057060" 
+                        className="inline-flex items-center text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Mulai Konsultasi
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="group relative z-10">
+                  <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+                    <div className="relative mb-6">
+                      <div className="absolute inset-0 bg-blue-500 rounded-full opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300"></div>
+                      <div className="relative w-20 h-20 bg-blue-500 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                        2
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-black dark:text-white">Test Drive Premium</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Jadwalkan test drive kapan saja dengan mobil pilihan Anda, baik di showroom atau lokasi yang Anda tentukan
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="group relative z-10">
+                  <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+                    <div className="relative mb-6">
+                      <div className="absolute inset-0 bg-green-500 rounded-full opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300"></div>
+                      <div className="relative w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                        3
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-black dark:text-white">Pembiayaan Fleksibel</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Pilih dari berbagai skema pembiayaan terbaik dengan bunga kompetitif dari partner leasing terpercaya kami
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 4 */}
+                <div className="group relative z-10">
+                  <div className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+                    <div className="relative mb-6">
+                      <div className="absolute inset-0 bg-purple-500 rounded-full opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300"></div>
+                      <div className="relative w-20 h-20 bg-purple-500 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                        4
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-black dark:text-white">Penyerahan Eksklusif</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Terima mobil baru Anda dengan proses serah terima eksklusif termasuk briefing lengkap dan souvenir premium
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="bg-primary-100 dark:bg-primary-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto text-primary-500 text-xl font-bold">2</div>
-                <h3 className="font-bold mb-2">Test Drive</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Jadwalkan test drive untuk merasakan pengalaman berkendara</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-primary-100 dark:bg-primary-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto text-primary-500 text-xl font-bold">3</div>
-                <h3 className="font-bold mb-2">Pembiayaan</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Pilih skema pembiayaan yang paling sesuai dengan kebutuhan</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-primary-100 dark:bg-primary-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto text-primary-500 text-xl font-bold">4</div>
-                <h3 className="font-bold mb-2">Penyerahan Unit</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Terima mobil baru Anda dengan proses serah terima eksklusif</p>
-              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="mt-16 text-center">
+              <a
+                href="https://wa.me/6282343057060"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white text-lg font-bold rounded-full shadow-lg transition-all transform hover:scale-105"
+              >
+                Mulai Proses Sekarang
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+              <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+                * Proses cepat dengan approval kredit dalam 1-2 hari kerja
+              </p>
             </div>
           </div>
         </section>
