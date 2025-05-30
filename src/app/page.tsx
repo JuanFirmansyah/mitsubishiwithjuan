@@ -5,8 +5,70 @@ import { FaCar, FaMoneyBillWave, FaTools, FaStar, FaPhoneAlt, FaMapMarkerAlt, Fa
 import Navbar from "../components/Navbar";
 import Head from "next/head";
 import CicilanCalculator from '../components/CicilanCalculator';
+import { ShieldCheck, CheckCircle, Tag } from 'lucide-react';
+
 
 export default function Home() {
+
+  const mitsubishiCars = [
+    {
+      name: 'Mitsubishi Xforce Ultimate CVT 2025',
+      image: '/xforce.jpg',
+      price: 'Rp 410.000.000',
+      tag: 'SUV Baru',
+      passengers: 5,
+      reviews: 35,
+    },
+    {
+      name: 'Mitsubishi Pajero Sport Dakar 4x2 AT 2025',
+      image: '/pajero.jpg',
+      price: 'Rp 645.000.000',
+      tag: 'SUV Premium',
+      passengers: 7,
+      reviews: 50,
+    },
+    {
+      name: 'Mitsubishi Xpander Cross Premium 2025',
+      image: '/xpander-cross.jpg',
+      price: 'Rp 360.000.000',
+      tag: 'Crossover',
+      passengers: 7,
+      reviews: 55,
+    },
+    {
+      name: 'Mitsubishi Xpander Ultimate CVT 2025',
+      image: '/xpander-ultimate.jpg',
+      price: 'Rp 330.000.000',
+      tag: 'Best Seller',
+      passengers: 7,
+      reviews: 70,
+    },
+    {
+      name: 'Mitsubishi Xpander GLS MT 2025',
+      image: '/xpander-gls.jpg',
+      price: 'Rp 285.000.000',
+      tag: 'MPV Entry',
+      passengers: 7,
+      reviews: 25,
+    },
+        {
+      name: 'Mitsubishi Triton Exceed 4x4 MT 2025',
+      image: '/triton.jpg',
+      price: 'Rp 460.000.000',
+      tag: 'Double Cabin',
+      passengers: 5,
+      reviews: 30,
+    },
+    {
+      name: 'Mitsubishi L300 Euro4 2025',
+      image: '/l300.jpg',
+      price: 'Rp 250.000.000',
+      tag: 'Niaga',
+      passengers: 3,
+      reviews: 20,
+    },
+  ];
+
   return (
     // Tambahkan di bagian head
     <>
@@ -39,195 +101,176 @@ export default function Home() {
                 Lihat Stok Mobil
               </a>
               <a
-                href="#contact"
+                href="#hitung-cicilan"
                 className="bg-white border-2 border-black hover:bg-white text-black px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105"
               >
-                Konsultasi Gratis
+                Simulasi Kredit
               </a>
             </div>
           </div>
         </section>
 
-        {/* Keunggulan Section */}
+        {/* Keunggulan Bosowa */}
         <section className="py-16 bg-white dark:bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">Mengapa Memilih <span className="text-primary-500">Bosowa</span>?</h2>
-              <p className="text-lg text-black dark:text-black max-w-2xl mx-auto">
-                Keunggulan yang membuat kami berbeda dari dealer lainnya
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">
+                Mengapa Memilih <span className="text-primary-500">Bosowa</span>?
+              </h2>
+              <p className="text-lg text-black max-w-2xl mx-auto">
+                Keunggulan yang menjadikan Bosowa pilihan utama pelanggan Mitsubishi
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white dark:bg-white p-6 rounded-xl shadow-md">
-                <div className="text-white text-4xl mb-4">🏆</div>
-                <h3 className="text-xl font-bold mb-3 text-black">Authorized Dealer</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Dealer resmi dengan jaminan keaslian sparepart dan layanan purna jual terstandar
+              {/* Keunggulan 1 */}
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+                <div className="text-primary-500 mb-4 flex justify-center">
+                  <ShieldCheck className="w-10 h-10 text-primary-500" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-black text-center">Dealer Resmi & Terpercaya</h3>
+                <p className="text-gray-600 text-center">
+                  Bosowa adalah dealer resmi Mitsubishi dengan layanan sales, servis, dan sparepart terlengkap.
                 </p>
               </div>
-              <div className="bg-white dark:bg-white p-6 rounded-xl shadow-md">
-                <div className="text-primary-500 text-4xl mb-4">💯</div>
-                <h3 className="text-xl font-bold mb-3 text-black">Garansi Terbaik</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Garansi komprehensif dengan cakupan luas dan masa berlaku lebih panjang
+
+              {/* Keunggulan 2 */}
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+                <div className="text-primary-500 mb-4 flex justify-center">
+                  <CheckCircle className="w-10 h-10" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-black text-center">Garansi & Purna Jual Terbaik</h3>
+                <p className="text-gray-600 text-center">
+                  Garansi kendaraan resmi dan dukungan purna jual luas dari jaringan Mitsubishi di seluruh Indonesia.
                 </p>
               </div>
-              <div className="bg-white dark:bg-white p-6 rounded-xl shadow-md">
-                <div className="text-primary-500 text-4xl mb-4">📈</div>
-                <h3 className="text-xl font-bold mb-3 text-black">Harga Kompetitif</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Harga terbaik dengan berbagai promo dan diskon eksklusif untuk pembeli
+
+              {/* Keunggulan 3 */}
+              <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+                <div className="text-primary-500 mb-4 flex justify-center">
+                  <Tag className="w-10 h-10" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-black text-center">Harga & Promo Kompetitif</h3>
+                <p className="text-gray-600 text-center">
+                  Penawaran harga terbaik, DP ringan, promo menarik, serta dukungan leasing terpercaya.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="py-16 bg-white dark:bg-gray-100">
+
+        {/* Section Layanan Mitsubishi Berlian Motor */}
+        <section id="layanan" className="py-16 bg-white dark:bg-gray-100">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">Our <span className="text-primary-500">Services</span></h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">
+                Layanan <span className="text-primary-500">Kami</span>
+              </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Comprehensive automotive solutions tailored to your needs
+                Solusi lengkap untuk kebutuhan kendaraan Anda, hanya di Mitsubishi Berlian Motor
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Card 1 */}
+              {/* Layanan 1 */}
               <div className="bg-white dark:bg-white shadow-lg rounded-xl p-8 transition-all hover:shadow-xl hover:-translate-y-2">
                 <div className="bg-primary-100 dark:bg-primary-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <FaCar className="text-red-700 text-2xl" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center text-black">Premium Vehicle Selection</h3>
+                <h3 className="text-xl font-bold mb-4 text-center text-black">Penjualan Mobil Resmi</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-center">
-                  Explore our curated collection of luxury and performance vehicles from top brands worldwide.
+                  Tersedia pilihan lengkap mobil Mitsubishi terbaru: Xforce, Xpander, Pajero, dan lainnya.
                 </p>
               </div>
-              {/* Card 2 */}
+
+              {/* Layanan 2 */}
               <div className="bg-white dark:bg-white shadow-lg rounded-xl p-8 transition-all hover:shadow-xl hover:-translate-y-2">
                 <div className="bg-primary-100 dark:bg-primary-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <FaMoneyBillWave className="text-red-700 text-2xl" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center text-black">Flexible Financing</h3>
+                <h3 className="text-xl font-bold mb-4 text-center text-black">Pembiayaan & Kredit Mudah</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-center">
-                  Customized financial solutions with competitive rates and transparent terms.
+                  Dapatkan skema cicilan ringan dengan DP fleksibel melalui leasing terpercaya seperti Dipo, Maybank, MTF, dll.
                 </p>
               </div>
-              {/* Card 3 */}
+
+              {/* Layanan 3 */}
               <div className="bg-white dark:bg-white shadow-lg rounded-xl p-8 transition-all hover:shadow-xl hover:-translate-y-2">
                 <div className="bg-primary-100 dark:bg-primary-900 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <FaTools className="text-red-700 text-2xl" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center text-black">Expert Maintenance</h3>
+                <h3 className="text-xl font-bold mb-4 text-center text-black">Servis & Suku Cadang Asli</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-center">
-                  Factory-trained technicians using genuine parts for optimal performance and longevity.
+                  Dikerjakan oleh teknisi bersertifikat Mitsubishi dengan jaminan suku cadang asli dan booking service mudah.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
+
         {/* Inventory Section */}
-        <section id="inventory" className="py-16 bg-gray-100 dark:bg-gray-100">
+        <section id="inventory" className="py-16 bg-gray-100">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">Featured <span className="text-primary-500">Inventory</span></h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Explore our latest premium vehicle arrivals
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">
+                Mobil <span className="text-primary-500">Mitsubishi</span> 2025
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Temukan berbagai pilihan mobil Mitsubishi, dari model unggulan hingga ekonomis
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Vehicle 1 */}
-              <div className="bg-white dark:bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-2">
-                <div className="relative h-64">
-                  <Image src="/car1.jpg" alt="Luxury Sedan" layout="fill" objectFit="cover" className="transition-transform duration-500 hover:scale-105" />
-                  <div className="absolute top-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    New Arrival
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-black">2024 Luxury Sedan</h3>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-gray-500 dark:text-gray-400">Starting at</span>
-                    <span className="text-lg font-bold text-black">$85,000</span>
-                  </div>
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
+
+            <div className="overflow-x-auto">
+              <div className="flex space-x-6 min-w-max pb-4">
+                {mitsubishiCars.map((car, index) => (
+                  <div
+                    key={index}
+                    className="min-w-[300px] bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-2"
+                  >
+                    <div className="relative h-64 w-full">
+                      <Image
+                        src={car.image}
+                        alt={car.name}
+                        layout="fill"
+                        objectFit="cover"
+                        className="transition-transform duration-500 hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {car.tag}
+                      </div>
                     </div>
-                    <span className="ml-2 text-gray-600 dark:text-gray-300">(24 Reviews)</span>
-                  </div>
-                  <button className="w-full bg-primary-500 hover:bg-primary-600 text-black py-2 rounded-lg font-medium transition-colors">
-                    View Details
-                  </button>
-                </div>
-              </div>
-              {/* Vehicle 2 */}
-              <div className="bg-white dark:bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-2">
-                <div className="relative h-64">
-                  <Image src="/car2.jpg" alt="Performance SUV" layout="fill" objectFit="cover" className="transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-black">2024 Performance SUV</h3>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-gray-500 dark:text-gray-400">Starting at</span>
-                    <span className="text-lg font-bold text-black">$92,500</span>
-                  </div>
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold mb-2 text-black">{car.name}</h3>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-gray-500">Harga Mulai</span>
+                        <span className="text-lg font-bold text-black">{car.price}</span>
+                      </div>
+                      <div className="text-gray-500 mb-2">
+                        Kapasitas: {car.passengers} Penumpang
+                      </div>
+                      <div className="flex items-center mb-4">
+                        <div className="flex text-yellow-400">
+                          {Array.from({ length: 5 }).map((_, i) => (
+                            <FaStar key={i} />
+                          ))}
+                        </div>
+                        <span className="ml-2 text-gray-600">({car.reviews} Review)</span>
+                      </div>
+                      <button className="w-full bg-primary-500 hover:bg-primary-600 text-black py-2 rounded-lg font-medium transition-colors">
+                        Lihat Detail
+                      </button>
                     </div>
-                    <span className="ml-2 text-gray-600 dark:text-gray-300">(18 Reviews)</span>
                   </div>
-                  <button className="w-full bg-primary-500 hover:bg-primary-600 text-black py-2 rounded-lg font-medium transition-colors">
-                    View Details
-                  </button>
-                </div>
-              </div>
-              {/* Vehicle 3 */}
-              <div className="bg-white dark:bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-2">
-                <div className="relative h-64">
-                  <Image src="/car3.jpg" alt="Electric Vehicle" layout="fill" objectFit="cover" className="transition-transform duration-500 hover:scale-105" />
-                  <div className="absolute top-4 right-4 bg-green-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
-                    Eco Friendly
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-black">2024 Electric Vehicle</h3>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-gray-500 dark:text-gray-400">Starting at</span>
-                    <span className="text-lg font-bold text-black">$78,900</span>
-                  </div>
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-yellow-400">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="ml-2 text-gray-600 dark:text-gray-300">(32 Reviews)</span>
-                  </div>
-                  <button className="w-full bg-primary-500 hover:bg-primary-600 text-black py-2 rounded-lg font-medium transition-colors">
-                    View Details
-                  </button>
-                </div>
+                ))}
               </div>
             </div>
+
             <div className="text-center mt-12">
               <a
                 href="#"
                 className="inline-block border-2 border-black text-black hover:bg-primary-500 hover:text-black px-8 py-3 rounded-full text-lg font-semibold transition-all"
               >
-                View Full Inventory
+                Lihat Semua Mobil
               </a>
             </div>
           </div>
@@ -330,75 +373,155 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="py-16 bg-white dark:bg-gray-100">
+        {/* Contact Section - Modern WhatsApp Integrated */}
+        <section id="contact" className="py-16 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black">Contact <span className="text-primary-500">Us</span></h2>
-              <p className="text-lg text-gray-600 dark:text-gray-600 max-w-2xl mx-auto">
-                Get in touch with our team for personalized assistance
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-black dark:text-white">
+                Hubungi <span className="text-primary-500">Kami</span>
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Tim profesional kami siap membantu kebutuhan mobil premium Anda
               </p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div className="bg-red-500 dark:bg-red-500 p-8 rounded-xl">
-                <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              {/* Contact Card - Modern Design */}
+              <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
+                <div className="flex flex-col items-center text-center mb-6">
+                  <div className="w-20 h-20 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mb-4">
+                    <FaPhoneAlt className="text-primary-500 text-2xl" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-black dark:text-white">Layanan Pelanggan</h3>
+                </div>
+
                 <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
-                      <FaPhoneAlt className="text-primary-500" />
+                  {/* WhatsApp Button - Primary CTA */}
+                  <a 
+                    href="https://wa.me/6282343057060" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-xl font-bold transition-colors"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Chat via WhatsApp
+                  </a>
+
+                  {/* Contact Details */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                      <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-full">
+                        <FaPhoneAlt className="text-primary-500" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-black dark:text-white">Telepon</h4>
+                        <a href="tel:+622112345678" className="text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">
+                          +62 21 1234 5678
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold">Phone</h4>
-                      <p className="text-gray-600 dark:text-gray-300">+62 21 1234 5678</p>
-                      <p className="text-gray-600 dark:text-gray-300">+62 811 1234 567</p>
+
+                    <div className="flex items-center gap-4 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                      <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-full">
+                        <FaMapMarkerAlt className="text-primary-500" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-black dark:text-white">Alamat</h4>
+                        <p className="text-gray-600 dark:text-gray-300">Bosowa Tower, Jl. Sudirman Kav. 1</p>
+                        <p className="text-gray-600 dark:text-gray-300">Jakarta Selatan, Indonesia 12920</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
-                      <FaMapMarkerAlt className="text-primary-500" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Address</h4>
-                      <p className="text-gray-600 dark:text-gray-300">Bosowa Tower, Jl. Sudirman Kav. 1</p>
-                      <p className="text-gray-600 dark:text-gray-300">Jakarta Selatan, Indonesia 12920</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-full mr-4">
-                      <FaEnvelope className="text-primary-500" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Email</h4>
-                      <p className="text-gray-600 dark:text-gray-300">info@bosowadealership.com</p>
-                      <p className="text-gray-600 dark:text-gray-300">sales@bosowadealership.com</p>
+
+                    <div className="flex items-center gap-4 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                      <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-full">
+                        <FaEnvelope className="text-primary-500" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-black dark:text-white">Email</h4>
+                        <a href="mailto:info@bosowadealership.com" className="text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">
+                          info@bosowadealership.com
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="bg-red-500 dark:bg-red-500 p-8 rounded-xl">
-                <h3 className="text-xl font-bold mb-6">Send Us a Message</h3>
+
+              {/* Contact Form - Modern Design */}
+              <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
+                <h3 className="text-2xl font-bold mb-6 text-black dark:text-white">Kirim Pesan Langsung</h3>
+                
                 <form className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
-                      <input type="text" id="name" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
+                      <label htmlFor="nama" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+                        Nama Lengkap
+                      </label>
+                      <input 
+                        type="text" 
+                        id="nama" 
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-black dark:text-white" 
+                        placeholder="Nama Anda"
+                      />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                      <input type="email" id="email" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
+                      <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+                        Alamat Email
+                      </label>
+                      <input 
+                        type="email" 
+                        id="email" 
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-black dark:text-white" 
+                        placeholder="email@contoh.com"
+                      />
                     </div>
                   </div>
+
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium mb-1">Subject</label>
-                    <input type="text" id="subject" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
+                    <label htmlFor="subjek" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+                      Subjek
+                    </label>
+                    <input 
+                      type="text" 
+                      id="subjek" 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-black dark:text-white" 
+                      placeholder="Subjek pesan"
+                    />
                   </div>
+
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
-                    <textarea id="message" rows={4} className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
+                    <label htmlFor="pesan" className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">
+                      Pesan Anda
+                    </label>
+                    <textarea 
+                      id="pesan" 
+                      rows={4} 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-black dark:text-white" 
+                      placeholder="Tulis pesan Anda disini..."
+                    ></textarea>
                   </div>
-                  <button type="submit" className="w-full bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-lg font-semibold transition-colors">
-                    Send Message
-                  </button>
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <button 
+                      type="submit" 
+                      className="flex-1 bg-primary-500 hover:bg-primary-600 text-white py-3 px-6 rounded-lg font-bold transition-colors"
+                    >
+                      Kirim Pesan
+                    </button>
+                    <a 
+                      href="https://wa.me/6282343057060" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-black dark:text-white py-3 px-6 rounded-lg font-bold transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                      </svg>
+                      WhatsApp
+                    </a>
+                  </div>
                 </form>
               </div>
             </div>

@@ -77,11 +77,11 @@ const Navbar = () => {
               className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-full"
             >
               <FaPhoneAlt className="text-sm" />
-              <span className="text-sm font-semibold">021-12345678</span>
+              <span className="text-sm font-semibold">0823-4305-7060</span>
             </motion.a>
             
             <motion.a
-              href="https://wa.me/628111234567"
+              href="https://wa.me/6282343057060"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center space-x-2 px-4 py-2 bg-green-500 text-white rounded-full"
