@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import Navbar from "../components/Navbar";
-import Head from "next/head";
 import CicilanCalculator from '../components/CicilanCalculator';
 import { ShieldCheck, CheckCircle, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
@@ -16,8 +15,8 @@ export default function Home() {
   const mitsubishiCars = [
     {
       name: 'Mitsubishi Xforce Ultimate CVT 2025',
-      image: '/xforce.jpg',
-      price: 'Rp 410.000.000',
+      image: '/xforce.png',
+      price: 'Rp 389.800.000',
       tag: 'SUV Baru',
       passengers: 5,
       reviews: 35,
@@ -25,8 +24,8 @@ export default function Home() {
     },
     {
       name: 'Mitsubishi Pajero Sport Dakar 4x2 AT 2025',
-      image: '/pajero.jpg',
-      price: 'Rp 645.000.000',
+      image: '/pajero.png',
+      price: 'Rp 645.400.000',
       tag: 'SUV Premium',
       passengers: 7,
       reviews: 50,
@@ -34,8 +33,8 @@ export default function Home() {
     },
     {
       name: 'Mitsubishi Xpander Cross Premium 2025',
-      image: '/xpander-cross.jpg',
-      price: 'Rp 360.000.000',
+      image: '/xpander-cross.png',
+      price: 'Rp 354.300.000',
       tag: 'Crossover',
       passengers: 7,
       reviews: 55,
@@ -43,8 +42,8 @@ export default function Home() {
     },
     {
       name: 'Mitsubishi Xpander Ultimate CVT 2025',
-      image: '/xpander-ultimate.jpg',
-      price: 'Rp 330.000.000',
+      image: '/xpander-ultimate.png',
+      price: 'Rp 348.800.000',
       tag: 'Best Seller',
       passengers: 7,
       reviews: 70,
@@ -53,7 +52,7 @@ export default function Home() {
     {
       name: 'Mitsubishi Xpander GLS MT 2025',
       image: '/xpander-gls.jpg',
-      price: 'Rp 285.000.000',
+      price: 'Rp 261.800.000',
       tag: 'MPV Entry',
       passengers: 7,
       reviews: 25,
@@ -61,7 +60,7 @@ export default function Home() {
     },
     {
       name: 'Mitsubishi Triton Exceed 4x4 MT 2025',
-      image: '/triton.jpg',
+      image: '/triton.png',
       price: 'Rp 460.000.000',
       tag: 'Double Cabin',
       passengers: 5,
@@ -70,7 +69,7 @@ export default function Home() {
     },
     {
       name: 'Mitsubishi L300 Euro4 2025',
-      image: '/l300.jpg',
+      image: '/l300.png',
       price: 'Rp 250.000.000',
       tag: 'Niaga',
       passengers: 3,
@@ -135,15 +134,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Bosowa Dealership - Dealer Mobil Premium Terbaik di Indonesia</title>
-        <meta name="description" content="Temukan mobil premium baru & bekas terbaik dengan pelayanan eksklusif dari Bosowa. Dapatkan promo menarik dan pembiayaan mudah." />
-        <meta name="keywords" content="mobil premium, dealer mobil, bosowa, mobil baru, mobil bekas, mitsubishi, kredit mobil, sparepart" />
-        <meta property="og:title" content="Bosowa Dealership - Dealer Mobil Premium Terbaik" />
-        <meta property="og:description" content="Temukan mobil premium baru & bekas terbaik dengan pelayanan eksklusif dari Bosowa." />
-        <meta property="og:image" content="https://bosowa.com/og-image.jpg" />
-      </Head>
-
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
         {/* Navigation */}
         <Navbar />
@@ -349,7 +339,7 @@ export default function Home() {
                           </div>
 
                           <div className="flex gap-4">
-                            <button className="flex-1 bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105">
+                            <button className="flex-1 bg-primary-500 hover:bg-primary-600 text-black py-3 rounded-lg font-semibold transition-all transform hover:scale-105">
                               Lihat Detail
                             </button>
                             <button className="flex-1 border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white py-3 rounded-lg font-semibold transition-all transform hover:scale-105">
