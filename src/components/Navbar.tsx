@@ -145,7 +145,7 @@ const Navbar = () => {
                 {/* Mobile CTA Buttons */}
                 <div className="flex flex-col space-y-3 pt-4">
                   <motion.a
-                    href="tel:+622112345678"
+                    href="https://wa.me/6282343057060"
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center justify-center space-x-2 px-4 py-3 bg-blue-600 text-white rounded-lg"
                   >
